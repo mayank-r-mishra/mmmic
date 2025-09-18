@@ -1,91 +1,114 @@
+/* Reset some default styles */
+body, h1, h2, h3, ul, p {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f5f7fa; /* Subtle gray-blue */
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FFFFFF;
+    color: #222;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
 }
 
-header {
-    background: #264653; /* Deep subdued blue */
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar styles */
+aside {
+    width: 250px;
+    background-color: #1b3b5a; /* Deep blue */
     color: #fff;
-    padding: 18px 0 10px 0;
-    border-bottom: 2px solid #2a9d8f; /* Emerald accent */
-    text-align: center;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border-right: 2px solid #2e6fa0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
 }
 
-.logo-area h1 {
-    margin: 0;
-    font-size: 2.5rem;
+aside h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
     letter-spacing: 3px;
 }
 
-.logo-area h2 {
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: #e9c46a; /* Calm gold accent */
+nav ul {
+    list-style: none;
+    width: 100%;
 }
 
-nav {
-    margin-top: 10px;
+nav ul li {
+    margin-bottom: 15px;
 }
 
-nav a {
-    color: #e9c46a; /* Calm gold */
-    background: none;
+nav ul li a {
     text-decoration: none;
-    margin: 0 14px;
-    font-weight: 500;
-    transition: color 0.2s;
+    color: #ccc;
+    font-weight: 600;
+    padding: 6px 12px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-nav a:hover {
-    color: #2a9d8f; /* Emerald hover */
-}
-
-.hero {
-    background: #fff;
-    margin: 30px auto 20px auto;
-    max-width: 780px;
-    border-radius: 15px;
-    box-shadow: 0 2px 10px #ddd;
-    padding: 30px 25px;
-    text-align: center;
-}
-
-main section {
-    background: #ffffffeb;
-    margin: 20px auto;
-    max-width: 780px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px #eaeaea;
-    padding: 20px 20px 10px 20px;
-}
-
-section h3 {
-    color: #264653;
-    margin-bottom: 14px;
-    font-size: 1.45rem;
-}
-
-footer {
-    margin-top: 40px;
-    background: #264653;
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #2e6fa0;
     color: #fff;
-    padding: 15px 0;
-    text-align: center;
-    font-size: 1em;
-    border-top: 2px solid #2a9d8f;
 }
 
-/* Simple responsive tweaks */
-@media (max-width: 600px) {
-    main, .hero, main section {
-        max-width: 98vw;
-        padding: 12px 6px;
+/* Main content styles */
+main {
+    flex-grow: 1;
+    padding: 40px 50px;
+    overflow-y: auto;
+}
+
+main h2 {
+    margin-bottom: 25px;
+    color: #1b3b5a;
+    border-bottom: 2px solid #2e6fa0;
+    padding-bottom: 6px;
+}
+
+main h3 {
+    margin-top: 30px;
+    margin-bottom: 12px;
+    color: #2e6fa0;
+}
+
+main ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+main p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    body {
+        flex-direction: column;
+        height: auto;
     }
-    nav a {
-        display: inline-block;
-        margin: 8px 4px;
+    aside {
+        width: 100%;
+        padding: 15px 10px;
+        border-right: none;
+        border-bottom: 2px solid #2e6fa0;
+    }
+    main {
+        padding: 20px 15px;
     }
 }
